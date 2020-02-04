@@ -4,9 +4,9 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import '../node_modules/bootstrap/dist/css/bootstrap.css'
-import CourseManager from './CourseManager'
+import CourseManagerComponent from './components/CourseManagerComponent.js'
 
-ReactDOM.render(<CourseManager />, document.getElementById('root'));
+ReactDOM.render(<CourseManagerComponent />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
