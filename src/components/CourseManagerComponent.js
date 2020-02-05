@@ -25,15 +25,14 @@ class CourseManagerComponent extends React.Component {
     });
   };
 
-  deleteCourse = async deletedCourse => {
+  deleteCourse = async deletedCourse=> {
+
     const status = await deleteCourse(deletedCourse._id);
     const courses = await findAllCourses();
     this.setState({
       courses: courses
     });
-    // this.setState(prevState => ({
-    //     courses: prevState.courses.filter(course => course._id !== deletedCourse._id)
-    // }))
+
   };
 
   toggle = () => {
@@ -72,10 +71,12 @@ class CourseManagerComponent extends React.Component {
     });
   };
 
-  updateForm = e =>
+  updateForm = (e) =>{
+
     this.setState({
       newCourseTitle: e.target.value
     });
+    }
 
   render() {
     return (

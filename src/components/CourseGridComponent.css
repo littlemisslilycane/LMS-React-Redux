@@ -2,3 +2,12 @@
 background-color: #eeeeee;
 height:100%;
 }
+
+
+.card-column {
+
+    column-count: 4;
+  }
+.card{
+width: 38rem;
+}

@@ -9,17 +9,40 @@ class CourseTableRow extends React.Component {
 
   state = {
     editing: false,
-    course: this.props.course
+    course: this.props.course,
+    bgcolor: 'white',
+    select: false,
+    fontcolor: 'black'
+
   };
 
+    selectToggle = () => {
+    if(this.state.select){
+    this.setState({
+      bgcolor: 'white',
+      select: false,
+      fontcolor: 'black'
+    });
+    }
+    else{
+    this.setState({
+          bgcolor: '#007bff',
+          select: true,
+          fontcolor :'white'
+        });
+    }
+}
   render() {
     return (
-      <div className="row wbdv-row wbdv-course mt-4 ml-1 border-bottom">
+      <div style = {{backgroundColor: this.state.bgcolor, color: this.state.fontcolor}}
+      onClick = {this.selectToggle}
+      className="row wbdv-row  wbdv-course p-3 ml-1  border-bottom">
         <div className="col-sm-6 text-truncate ">
           <i class="fa fa-file pr-2"></i>
           {!this.state.editing && (
-            <a href="#" onClick={this.props.showCourseEditor}>
-              {this.state.course.title}
+            <a href="#" class="wbdv-coursetitle" onClick={this.props.showCourseEditor}
+            style={{color:this.state.fontcolor}}>
+                        {this.state.course.title}
             </a>
           )}
           {this.state.editing && (
@@ -36,21 +59,17 @@ class CourseTableRow extends React.Component {
             />
           )}
         </div>
-        <div className="col-sm-2">me</div>
-        <div className="col-sm-2">6.45 PM</div>
+        <div className="col-sm-2 d-none d-sm-block ">me</div>
+        <div className="col-sm-2 d-none d-sm-block ">6.45 PM</div>
         <div className="col-sm-2">
         <div className="row">
-          <div className="col-4"><i
-            className="fa fa-2x fa-trash"
-            onClick={() => this.props.deleteCourse(this.props.course)}
-          ></i></div>
-          <div className="col-4"><i
+          <div className="col-4">t654e3w2 </div>
+          <div className="col-4">{ !this.state.editing && <i
             className="fa fa-2x fa-pencil"
-            onClick={() => this.setState({ editing: true })}
-          ></i></div>
-          <div className="col-4"><i
+            onClick={e => {e.stopPropagation(); this.setState({ editing: true })}}></i>}</div>
+          <div className="col-4">{ this.state.editing &&<i
             className="fa fa-2x fa-check"
-            onClick={e => {
+            onClick={e => { e.stopPropagation();
               updateCourse(this.state.course._id, this.state.course).then(
                 status => {}
               );
@@ -58,7 +77,7 @@ class CourseTableRow extends React.Component {
                 editing: false
               });
             }}
-          ></i></div>
+          ></i>}</div>
           </div>
         </div>
       </div>

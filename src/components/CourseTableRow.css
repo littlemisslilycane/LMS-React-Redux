@@ -1,3 +1,13 @@
 .wbdv-row{
 font-size: large;
+
+}
+
+.wbdv-course:hover{
+background: #e8f0fe;
+}
+
+.wbdv-coursetitle{
+text-decoration:none;
+color:!important;
 }
