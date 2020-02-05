@@ -5,6 +5,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import '../node_modules/bootstrap/dist/css/bootstrap.css'
 import CourseManagerComponent from './components/CourseManagerComponent.js'
+import '../node_modules/font-awesome/css/font-awesome.min.css';
 
 ReactDOM.render(<CourseManagerComponent />, document.getElementById('root'));
 
