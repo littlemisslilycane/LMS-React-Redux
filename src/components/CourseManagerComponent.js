@@ -26,13 +26,11 @@ class CourseManagerComponent extends React.Component {
   };
 
   deleteCourse = async deletedCourse=> {
-
     const status = await deleteCourse(deletedCourse._id);
     const courses = await findAllCourses();
     this.setState({
       courses: courses
     });
-
   };
 
   toggle = () => {
@@ -60,22 +58,37 @@ class CourseManagerComponent extends React.Component {
     });
 
   addCourse = async () => {
+    if(this.state.newCourseTitle.trim() == ""){
+    alert("Please enter the course title");
+    return false;
+    }
     const newCourse = {
-      title: this.state.newCourseTitle
+      title: this.state.newCourseTitle,
+      date: (new Date()).toLocaleString()
     };
     const actualCourse = await createCourse(newCourse);
-    console.log(actualCourse);
+
     const allCourses = await findAllCourses();
+    this.setState({
+          newCourseTitle: ''
+
+        });
     this.setState({
       courses: allCourses
     });
   };
 
   updateForm = (e) =>{
-
     this.setState({
       newCourseTitle: e.target.value
+
     });
+    this.setState({
+                      course: {
+                        ...this.state.course,
+
+                      }
+                  })
     }
 
   render() {
@@ -91,10 +104,14 @@ class CourseManagerComponent extends React.Component {
                 showCourseEditor={this.showCourseEditor}
                 deleteCourse={this.deleteCourse}
                 courses={this.state.courses}
-                toggle = {this.toggle}              />
+                toggle = {this.toggle} />
             )}
             {this.state.layout === "grid" && (
-              <CourseGridComponent courses={this.state.courses} toggle = {this.toggle} />
+              <CourseGridComponent courses={this.state.courses}
+              deleteCourse={this.deleteCourse}
+                              courses={this.state.courses}
+                              toggle = {this.toggle}
+               toggle = {this.toggle} />
             )}
 	   </div>
         )}

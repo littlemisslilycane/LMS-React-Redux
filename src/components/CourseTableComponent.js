@@ -4,13 +4,13 @@ import CourseTableRow from "./CourseTableRow";
 const CourseTableComponent = ({courses, deleteCourse, showCourseEditor,toggle})=>
     <div className = "bg-light border-bottom">
      <div className="row wbdv-row  font-weight-bold border-bottom  p-3 ">
-             <div className="col-sm-6">
+             <div className="col-sm-6 col-9">
                Title
              </div>
-             <div className="col-sm-2 d-none d-sm-block ">Owned By</div>
-             <div className="col-sm-2 d-none d-sm-block ">Last Modified By</div>
-             <div className="col-sm-2">
-             <i onClick = {toggle }class="fa fa-th pr-5 wbdv-button
+             <div className="col-sm-2 d-none d-md-block ">Owned By</div>
+             <div className="col-sm-2 d-none d-md-block ">Last Modified By</div>
+             <div className="col-sm-2 col-3">
+             <i onClick = {toggle }className="fa fa-th pr-5 wbdv-button
              wbdv-grid-layout"></i>
              </div>
            </div>

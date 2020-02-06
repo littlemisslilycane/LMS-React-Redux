@@ -14,7 +14,7 @@ const CourseManagerHeading = ({updateForm,addCourse,newCourseTitle}) =>
                         type="text"
                         value={newCourseTitle}
                         className="form-control wbdv-field  wbdv-new-course"
-                        placeholder="New Course Title"                  />
+                        placeholder="New Course Title"  />
                       <span className="input-group-append">
                         <button
                           onClick={addCourse}

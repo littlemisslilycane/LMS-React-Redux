@@ -2,7 +2,7 @@ import React from "react";
 import CourseGridCard from "./CourseGridCard";
 import "./CourseGridComponent.css";
 
-const CourseGridComponent = ({courses , toggle})=>
+const CourseGridComponent = ({courses , deleteCourse, showCourseEditor, toggle})=>
     <div className="wbdv-coursegrid">
     <div className = "bg-light border-bottom">
      <div className="row wbdv-row font-weight-bold border-bottom  p-3">
@@ -15,14 +15,18 @@ const CourseGridComponent = ({courses , toggle})=>
              </div>
            </div>
     </div>
-    <div className="container mt-3">
-     <div className="card-columns">{
+    <div className="container-fluid mt-3">
+     <div className="card-deck">{
                          courses.map(function(course, index) {
-                                             return <CourseGridCard
-                                                 key={course._id}
-                                                 course={course}/>
+                                             return(
+                                             <div key={course
+                                             ._id}className="col-xl-2 col-lg-3 col-md-4 col-sm-6 mb-4">
+                                                <CourseGridCard course={course}
+                                                showCourseEditor={showCourseEditor}
+                                                  deleteCourse={deleteCourse}/>
+                                             </div>);
                                     })
-                                    }
+                                }
      </div>
 
      </div>
