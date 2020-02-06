@@ -1,6 +1,5 @@
 import React from "react";
-import CourseGridCard from "./CourseGridCard";
-import "./CourseGridComponent.css";
+import CourseCardComponent from "../components/CourseCardComponent";
 
 const CourseGridComponent = ({courses , deleteCourse, showCourseEditor, toggle})=>
     <div className="wbdv-coursegrid">
@@ -11,7 +10,7 @@ const CourseGridComponent = ({courses , deleteCourse, showCourseEditor, toggle})
              </div>
              <div className="col-sm-2">Owned By me</div>
              <div className="col-sm-2">
-             <i onClick = {toggle } className="fa fa-th pr-5 wbdv-button wbdv-grid-layout"></i>
+             <i onClick = {toggle } className="fa fa-list pr-5 wbdv-button    wbdv-grid-layout"></i>
              </div>
            </div>
     </div>
@@ -21,15 +20,15 @@ const CourseGridComponent = ({courses , deleteCourse, showCourseEditor, toggle})
                                              return(
                                              <div key={course
                                              ._id}className="col-xl-2 col-lg-3 col-md-4 col-sm-6 mb-4">
-                                                <CourseGridCard course={course}
+                                                <CourseCardComponent
                                                 showCourseEditor={showCourseEditor}
-                                                  deleteCourse={deleteCourse}/>
+                                                  deleteCourse={deleteCourse}
+                                                  course={course}/>
                                              </div>);
                                     })
                                 }
      </div>
 
      </div>
-
     </div>
 export default CourseGridComponent

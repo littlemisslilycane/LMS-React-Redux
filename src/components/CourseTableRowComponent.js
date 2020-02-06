@@ -2,7 +2,7 @@ import React from "react";
 import { updateCourse } from "../services/CourseService";
 import './CourseTableRow.css'
 
-class CourseTableRow extends React.Component {
+class CourseTableRowComponent extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -89,4 +89,4 @@ class CourseTableRow extends React.Component {
   }
 }
 
-export default CourseTableRow;
+export default CourseTableRowComponent;

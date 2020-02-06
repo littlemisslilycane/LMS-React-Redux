@@ -1,5 +1,5 @@
 import React from "react";
-import CourseTableRow from "./CourseTableRow";
+import CourseTableRowComponent from "../components/CourseTableRowComponent";
 
 const CourseTableComponent = ({courses, deleteCourse, showCourseEditor,toggle})=>
     <div className = "bg-light border-bottom">
@@ -16,7 +16,7 @@ const CourseTableComponent = ({courses, deleteCourse, showCourseEditor,toggle})=
            </div>
             {
                 courses.map(function(course, index) {
-                    return <CourseTableRow
+                    return <CourseTableRowComponent
                         showCourseEditor={showCourseEditor}
                         deleteCourse={deleteCourse}
                         key={course._id}

@@ -1,9 +1,9 @@
 import React from "react";
-import CourseManagerHeading from "./CourseManagerHeading";
-import CourseTableComponent from "./CourseTableComponent";
-import CourseGridComponent from "./CourseGridComponent";
-import CourseEditor from "./CourseEditor/CourseEditor.js";
-import "./CourseManagerComponent.css";
+import CourseManagerHeadingComponent from "../components/CourseManagerHeadingComponent.js";
+import CourseTableContainer from "./CourseTableContainer";
+import CourseGridContainer from "./CourseGridContainer";
+import CourseEditorContainer from "./CourseEditorContainer.js";
+import "./CourseManagerContainer-style.css";
 import {
   deleteCourse,
   createCourse,
@@ -93,28 +93,35 @@ class CourseManagerComponent extends React.Component {
 
   render() {
     return (
-      <div className="wbdv-coursemanager">
-         <CourseManagerHeading updateForm = {this.updateForm}
+    <div>
+        {    this.state.editingCourse
+                        && <CourseEditorContainer hideCourseEditor={this.hideCourseEditor}/>
+                    }
+       {!this.state.editingCourse && <div className="wbdv-coursemanager">
+         <CourseManagerHeadingComponent updateForm = {this.updateForm}
           addCourse = {this.addCourse}
           newCourseTitle = {this.state.newCourseTitle}/>
         {!this.state.editingCourse && (
              <div className="wbdv-toggled">
             {this.state.layout === "table" && (
-              <CourseTableComponent
+              <CourseTableContainer
                 showCourseEditor={this.showCourseEditor}
                 deleteCourse={this.deleteCourse}
                 courses={this.state.courses}
                 toggle = {this.toggle} />
             )}
             {this.state.layout === "grid" && (
-              <CourseGridComponent courses={this.state.courses}
+              <CourseGridContainer courses={this.state.courses}
               deleteCourse={this.deleteCourse}
+              showCourseEditor={this.showCourseEditor}
                               courses={this.state.courses}
                               toggle = {this.toggle}
                toggle = {this.toggle} />
             )}
 	   </div>
         )}
+      </div>
+      }
       </div>
     );
   }

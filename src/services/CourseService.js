@@ -34,3 +34,8 @@ export const findAllCourses = () => {
     return fetch(API_URL)
         .then(response => response.json())
 }
+
+export const findCourseById= (id) =>{
+return fetch(`${API_URL}/${id}`)
+        .then(response => response.json())
+}

@@ -3,7 +3,7 @@ import { updateCourse } from "../services/CourseService";
 import logo  from '../fileimage.png';
 
 
-class CourseGridCard extends React.Component {
+class CourseCardComponent extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -20,8 +20,7 @@ class CourseGridCard extends React.Component {
       <img src={logo} className="card-img-top " alt="..." />
         <div className="card-body text-truncate">
           <h5 className="card-title">{!this.state.editing && (
-                                                 <a href="#"
-                                                 class="wbdv-coursetitle" onClick={this.props.showCourseEditor}>
+                                                 <a href="#" className="wbdv-coursetitle" onClick={this.props.showCourseEditor}>
                                                              {this.state.course.title}
                                                  </a>
                                                )}
@@ -41,9 +40,10 @@ class CourseGridCard extends React.Component {
                                                )}</h5>
 
           <div className="card-footer bg-transparent border-success ">
-          <p className="card-text">Modified { this.props.course.date }</p>
+          <div className="card-text">{ this.props.course.date }</div>
           <div className="row">
-          <div className="col-4">{ !this.state.editing && <i className="fa fa-2x fa-trash"
+          <div className="col-4">{ !this.state.editing && <i className="fa
+          fa-2x fa-trash"
                       onClick={e => {e.stopPropagation(); this.props.deleteCourse(this.props.course)}}></i>}
           </div>
            <div className="col-4">{ !this.state.editing &&  <i
@@ -70,4 +70,4 @@ class CourseGridCard extends React.Component {
   }
 }
 
-export default CourseGridCard;
+export default CourseCardComponent;
