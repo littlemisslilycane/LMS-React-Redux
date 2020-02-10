@@ -1,5 +1,6 @@
 import React from "react";
 import CourseTableRowComponent from "../components/CourseTableRowComponent";
+import {Link} from "react-router-dom";
 
 const CourseTableComponent = ({courses, deleteCourse, showCourseEditor,toggle})=>
     <div className = "bg-light border-bottom">
@@ -10,8 +11,9 @@ const CourseTableComponent = ({courses, deleteCourse, showCourseEditor,toggle})=
              <div className="col-sm-2 d-none d-md-block ">Owned By</div>
              <div className="col-sm-2 d-none d-md-block ">Last Modified By</div>
              <div className="col-sm-2 col-3">
-             <i onClick = {toggle }className="fa fa-th pr-5 wbdv-button
-             wbdv-grid-layout"></i>
+                 <Link to={`/grid`}>    <i className="fa fa-th pr-5 wbdv-button
+             wbdv-grid-layout"></i></Link>
+
              </div>
            </div>
             {

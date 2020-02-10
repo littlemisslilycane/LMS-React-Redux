@@ -1,6 +1,7 @@
 import React from "react";
 import { updateCourse } from "../services/CourseService";
 import logo  from '../fileimage.png';
+import {Link} from "react-router-dom";
 
 
 class CourseCardComponent extends React.Component {
@@ -20,9 +21,10 @@ class CourseCardComponent extends React.Component {
       <img src={logo} className="card-img-top " alt="..." />
         <div className="card-body text-truncate">
           <h5 className="card-title">{!this.state.editing && (
-                                                 <a href="#" className="wbdv-coursetitle" onClick={this.props.showCourseEditor}>
-                                                             {this.state.course.title}
-                                                 </a>
+              <Link  className="wbdv-coursetitle"
+                    to={`/course-editor/${this.state.course._id}`}>
+                  {this.state.course.title}
+              </Link>
                                                )}
                                                {this.state.editing && (
                                                  <input
