@@ -43,7 +43,7 @@ const CourseEditorComponent = ({history, courseId, moduleId, lessonId}) => (
                             role="tabpanel"
                             aria-labelledby="home-tab"
                         >
-                            {moduleId && lessonId && <TopicPillsComponent/>
+                            {moduleId  && <TopicPillsComponent/>
                             &&
                             <WidgetListComponent/>}
                         </div>

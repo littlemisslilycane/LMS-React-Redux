@@ -1,6 +1,7 @@
-import {CREATE_MODULE} from "./moduleActions";
+
 export const FIND_LESSONS = "UPDATE_MODULE"
 export const CREATE_LESSON = "CREATE_LESSON"
+export const DELETE_LESSON = "DELETE_LESSON"
 
 export const createLesson = (lesson) => ({
     type: CREATE_LESSON,
@@ -10,6 +11,12 @@ export const createLesson = (lesson) => ({
 
 
 export const findLessons = (lesson) => ({
+
     type: FIND_LESSONS,
+    lesson: lesson
+})
+
+export const deleteLesson = (lesson) =>({
+    type: DELETE_LESSON,
     lesson: lesson
 })

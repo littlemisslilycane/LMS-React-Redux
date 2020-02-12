@@ -9,7 +9,6 @@ const ModuleListItemComponent = ({module,deleteModule,editing,edit,currentModule
 {!editing && <a href="#" className="wbdv-module-item-title">{module.title}</a>}
 {editing && <input type="text" onChange= {onChangeEdit} value ={currentModuleTitle}/> }
 {editing && <a href="#" onClick={save}  className="btn fa fa-save"></a> }
-
 <a href="#" onClick = {() => deleteModule(module._id)}className="btn close wbdv-module-item-delete-btn" aria-label="Close"><span aria-hidden="true">&times;</span></a>
 <a href="#" onClick ={edit} className="btn fa fa-pencil"></a>
 </li>

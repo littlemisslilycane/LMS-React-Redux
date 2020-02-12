@@ -2,18 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3bf7cbd0-a23a-4322-9449-10d03e27b342" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/actions/lessonActions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CourseEditor/LessonTabItemComponent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/lessonReducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/LessonService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/moduleActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/moduleActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/constants.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CourseEditor/CourseEditorComponent-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseEditor/CourseEditorComponent-style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/lessonActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/lessonActions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/CourseEditor/CourseEditorComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseEditor/CourseEditorComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CourseEditor/LessonTabItemComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseEditor/LessonTabItemComponent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/CourseEditor/LessonTabsComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseEditor/LessonTabsComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CourseEditor/ModuleListComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseEditor/ModuleListComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CourseEditor/ModuleListItemComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseEditor/ModuleListItemComponent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/CourseManagerContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/CourseManagerContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/ModuleService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/ModuleService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/lessonReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/lessonReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/LessonService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/LessonService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +59,7 @@
       <option name="presentableId" value="Default" />
       <updated>1580762123130</updated>
       <workItem from="1581270733332" duration="35173000" />
-      <workItem from="1581439694177" duration="31455000" />
+      <workItem from="1581439694177" duration="42668000" />
     </task>
     <servers />
   </component>
@@ -80,21 +78,21 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="94" y="94" width="1092" height="492" key="DiffContextDialog/0.0.1280.680@0.0.1280.680" timestamp="1581490840827" />
-    <state x="298" y="151" key="run.anything.popup" timestamp="1581457775875">
+    <state x="298" y="151" key="run.anything.popup" timestamp="1581531706640">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="298" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1581457775875" />
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1581462179272">
+    <state x="298" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1581531706640" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1581531943280">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1581462179272" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1581531943280" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/components/CourseEditor/ModuleListComponent.js</url>
-          <line>74</line>
+          <line>76</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="2" />
         </line-breakpoint>

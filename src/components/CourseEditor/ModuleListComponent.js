@@ -8,7 +8,9 @@ class ModuleListComponent extends React.Component {
 
     componentDidMount() {
         this.props.findModuleForCourse(this.props.courseId)
+
     }
+
 
     state = {
         editingModuleId: '',

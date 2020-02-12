@@ -1,11 +1,11 @@
-import {CREATE_LESSON,FIND_LESSONS} from "../actions/lessonActions";
+import {CREATE_LESSON,FIND_LESSONS,DELETE_LESSON} from "../actions/lessonActions";
 
 const initState = {
     lessons: []
 }
 
 const lessonReducer = (state = initState, action) => {
-    switch (action) {
+    switch (action.type) {
         case CREATE_LESSON:
             return {
                 lessons: [
@@ -14,8 +14,15 @@ const lessonReducer = (state = initState, action) => {
                 ]
             }
         case FIND_LESSONS:
+            console.log("lessons:");
+
             return {
                 lessons: action.lesson
+            }
+        case DELETE_LESSON:
+            return {
+                lessons:
+                    state.lessons.filter(lesson => lesson._id != action.lesson)
             }
         default:
             debugger;

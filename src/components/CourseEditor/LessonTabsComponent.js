@@ -8,17 +8,29 @@ import LessonTabItemComponent from "./LessonTabItemComponent";
 import {createLesson,findLessons} from "../../actions/lessonActions"
 
 class LessonTabsComponent extends React.Component {
-
     componentDidMount() {
         this.props.findLessonsForModule(this.props.moduleId)
+    }
+
+    componentDidUpdate(prevProps){
+        if(this.props.moduleId !== prevProps.moduleId) {
+            this.props.findLessonsForModule(this.props.moduleId)
+        }
+
     }
 
     render() {
         return (
             <div className="col-sm-8 mt-3">
-                <ul className="nav nav-tabs border-0">
+                <ul className="nav nav-tabs  border-0">
                     {this.props.lessons && this.props.lessons.map(lesson =>
-                        <LessonTabItemComponent key={lesson._id}/>
+                            <LessonTabItemComponent key={lesson._id}
+                                                    lessonTitle = {lesson.title}
+                                                    lessonId = {lesson._id}
+                                                    lesson = {lesson}
+
+                            />
+
                     )}
                     <li className="nav-item pr-3 wbdv-page-tab"><a
                         onClick={() => this.props.createLesson(this.props.moduleId)}
@@ -32,7 +44,7 @@ class LessonTabsComponent extends React.Component {
 
 const stateToPropertyMapper = (state) => {
     return {
-        modules: state.lessons.lessons
+        lessons: state.lessons.lessons
     }
 }
 
@@ -48,8 +60,8 @@ const dispatchToPropertyMapper = (dispatch) => {
         findLessonsForModule: (moduleId) => {
 
             findLessonsService(moduleId)
-                .then(lesson =>
-                    dispatch(findLessons(lesson)))
+                .then(actualLesson =>
+                    dispatch(findLessons(actualLesson)))
 
         }
     }
