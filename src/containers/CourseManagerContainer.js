@@ -97,8 +97,8 @@ class CourseManagerComponent extends React.Component {
                     <Route path="/course-editor/:courseId"
                            exact={true}
                            render={(props) =>
-                               <CourseEditorComponent courseId = {props.match.params.courseId}
-                                   {...props}/>}
+                               <CourseEditorComponent courseId={props.match.params.courseId}
+                                                      {...props}/>}
                     />
 
                     <Route
@@ -109,22 +109,31 @@ class CourseManagerComponent extends React.Component {
                                 {...props}
                                 moduleId={props.match.params.moduleId}
                                 courseId={props.match.params.courseId}
-                                />}/>
+                            />}/>
+                    <Route
+                        path="/course-editor/:courseId/module/:moduleId/lesson/:lessonId"
+                        exact={true}
+                        render={(props) =>
+                            <CourseEditorComponent
+                                {...props}
+                                lessonId={props.match.params.lessonId}
+                                moduleId={props.match.params.moduleId}
+                                courseId={props.match.params.courseId}
+                                hideEditor={this.hideEditor}/>
+                        }/>
 
 
-
-
-                        <Route path="/(|table|grid)"
-                            exact={true}
-                            render={(props) => <CourseListComponent
-                            updateForm={this.updateForm}
-                            addCourse={this.addCourse}
-                            newCourseTitle={this.state.newCourseTitle}
-                            deleteCourse={this.deleteCourse}
-                            courses={this.state.courses}
-                            toggle={this.toggle}
-                            layout={this.state.layout}
-                        /> } />
+                    <Route path="/(|table|grid)"
+                           exact={true}
+                           render={(props) => <CourseListComponent
+                               updateForm={this.updateForm}
+                               addCourse={this.addCourse}
+                               newCourseTitle={this.state.newCourseTitle}
+                               deleteCourse={this.deleteCourse}
+                               courses={this.state.courses}
+                               toggle={this.toggle}
+                               layout={this.state.layout}
+                           />}/>
 
                 </Router>
             </div>

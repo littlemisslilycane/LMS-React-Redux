@@ -1,51 +1,51 @@
 
 .wbdv-module-item.wbdv-active {
-  background-color: #2a90ea; }
+    background-color: #2a90ea;
+}
 
 
-.wbdv-module-item.active :hover{
-	background-color: #2a90ea; }
+
 
 .wbdv-module-item {
-  font-weight: bold;
-  margin:10px;
-  background-color:#4c5154
+    font-weight: bold;
+    margin: 10px;
+    background-color: #4c5154
 }
 
-.wbdv-module-item:hover {
-
-  background-color:#818a8f;
+.wbdv-module-item:hover:not(.active) {
+    background-color: #818a8f;
 }
 
-.wbdv-module-item a{
-	color:white;
-	text-decoration:none;
+.wbdv-module-item a {
+    color: white;
+    text-decoration: none;
 }
 
-.wbdv-course-editor{
-	  background-color:#363b3e;
-	  color:white;
+.wbdv-course-editor {
+    background-color: #363b3e;
+    color: white;
 
 }
-.wbdv-add-widget{
 
-	width:40px;
-	height:40px;
-	background-color:red;
-	color:white;
-	border-radius:30px;
-	text-align:center;
-	box-shadow: 2px 2px 3px #999;
+.wbdv-add-widget {
+
+    width: 40px;
+    height: 40px;
+    background-color: red;
+    color: white;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 2px 2px 3px #999;
 }
 
-.wbdv-module-item-add-btn{
-	color:white;
+.wbdv-module-item-add-btn {
+    color: white;
 }
 
-.nav-tabs a{
-	color:white;
+.nav-tabs a {
+    color: white;
 }
 
-.wbdv-module-list{
-	background-color:#363b3e;
+.wbdv-module-list {
+    background-color: #363b3e;
 }
