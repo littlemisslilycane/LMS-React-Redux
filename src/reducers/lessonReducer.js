@@ -1,4 +1,4 @@
-import {CREATE_LESSON,FIND_LESSONS,DELETE_LESSON} from "../actions/lessonActions";
+import {CREATE_LESSON, FIND_LESSONS, DELETE_LESSON, UPDATE_LESSONS} from "../actions/lessonActions";
 
 const initState = {
     lessons: []
@@ -14,10 +14,12 @@ const lessonReducer = (state = initState, action) => {
                 ]
             }
         case FIND_LESSONS:
-            console.log("lessons:");
-
             return {
                 lessons: action.lesson
+            }
+        case UPDATE_LESSONS:
+            return {
+                lessons: state.lessons.map(lesson => lesson._id === action.lessonId ? action.updatedLesson: lesson)
             }
         case DELETE_LESSON:
             return {
