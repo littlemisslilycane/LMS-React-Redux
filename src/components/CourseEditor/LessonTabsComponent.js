@@ -2,10 +2,12 @@ import React from "react";
 import {connect} from "react-redux";
 import {
     createLesson as createLessonService,
-    findLessonsForModule as findLessonsService
+    findLessonsForModule as findLessonsService,
+    updateLesson as updateLessonService
 } from '../../services/LessonService'
 import LessonTabItemComponent from "./LessonTabItemComponent";
-import {createLesson,findLessons} from "../../actions/lessonActions"
+import {createLesson,findLessons,updateLesson} from "../../actions/lessonActions"
+
 
 class LessonTabsComponent extends React.Component {
     componentDidMount() {
@@ -13,12 +15,17 @@ class LessonTabsComponent extends React.Component {
     }
 
     componentDidUpdate(prevProps){
-        if(this.props.moduleId !== prevProps.moduleId) {
+        if(this.props.moduleId !== prevProps.moduleId  ) {
             this.props.findLessonsForModule(this.props.moduleId)
         }
 
     }
 
+    state = {
+        editingLessonId: '',
+        currentLessonTitle: '',
+        activeLessonId: this.props.lessonId,
+    }
     render() {
         return (
             <div className="col-sm-8 mt-3">
@@ -28,6 +35,29 @@ class LessonTabsComponent extends React.Component {
                                                     lessonTitle = {lesson.title}
                                                     lessonId = {lesson._id}
                                                     lesson = {lesson}
+                                                    editing={this.state.editingLessonId === lesson._id}
+                                                    currentLessonTitle = {this.state.currentLessonTitle}
+                                                    onChangeEdit={e =>
+                                                        this.setState({
+                                                            currentLessonTitle: e.target.value
+                                                        })
+                                                    }
+                                                    edit={() => {
+                                                        this.setState({
+                                                            editingLessonId: lesson._id,
+                                                            currentLessonTitle: lesson.title
+                                                        })
+                                                    }}
+                                                    save={() => {
+                                                        this.props.saveLesson(this.state.currentLessonTitle, this.state.editingLessonId)
+                                                        this.setState({
+                                                            currentLessonTitle: '',
+                                                            editingLessonId: ''
+                                                        })
+
+                                                    }}
+
+
 
                             />
 
@@ -63,6 +93,12 @@ const dispatchToPropertyMapper = (dispatch) => {
                 .then(actualLesson =>
                     dispatch(findLessons(actualLesson)))
 
+        },
+        saveLesson: (newLessonTitle, editingLessonId) => {
+            updateLessonService(editingLessonId,newLessonTitle)
+            .then(
+                dispatch(updateLesson({title: newLessonTitle}, editingLessonId))
+            )
         }
     }
 

@@ -30,7 +30,7 @@ const CourseEditorComponent = ({history, courseId, moduleId, lessonId}) => (
                     </button>
                     <h1 className="wbdv-course-title mt-1">CS5610 - WebDev</h1>
                 </div>
-                {moduleId && (<LessonTabsComponent lessonId = {lessonId} moduleId={moduleId}/>)}
+                {moduleId && (<LessonTabsComponent courseId={courseId}  history={history} lessonId = {lessonId} moduleId={moduleId}/>)}
             </div>
             <div className="row">
                 <ModuleListComponent courseId={courseId} history={history}/>

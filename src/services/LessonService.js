@@ -16,6 +16,8 @@ export const createLesson = (moduleId, lesson) => {
 
 }
 
+
+
 export const findLessonsForModule = (moduleId) => {
     const response = fetch(`${API_LINK}/modules/${moduleId}/lessons`, {
         method: 'GET'
@@ -27,7 +29,7 @@ export const findLessonsForModule = (moduleId) => {
 }
 
 export const deleteLesson = (lessonId) => {
-    
+
     const response = fetch(`${API_LINK}/lessons/${lessonId}`, {
         method: 'DELETE'
     }).then(response => {
@@ -35,6 +37,18 @@ export const deleteLesson = (lessonId) => {
     })
     return response;
 }
+
+export const updateLesson = (lessonId,lesson) =>{
+    const response = fetch(`https://wbdv-generic-server.herokuapp.com/api/001387987/lessons/${lessonId}`, {
+        method: 'PUT',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify({title: lesson})
+    }).then(response => {return response.json()})
+    return response;
+}
+
 export default {
     createLesson, findLessonsForModule, deleteLesson
 }
