@@ -2,26 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3bf7cbd0-a23a-4322-9449-10d03e27b342" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/CourseEditor/CourseEditorComponent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CourseEditor/WidgetListComponent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CourseGridComponent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CourseListComponent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/ModuleService.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/actions/moduleActions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/CourseEditor/ModuleListItemComponent.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/reducers/moduleReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CourseCardComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseCardComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CourseTableRowComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseTableRowComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LessonTabsComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseEditor/LessonTabsComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ModuleListComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseEditor/ModuleListComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TopicPillsComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseEditor/TopicPillsComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/WidgetListComponent.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/CourseEditorContainer-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseEditor/CourseEditorComponent-style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/CourseEditorContainer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/CourseGridContainer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CourseEditor/CourseEditorComponent-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseEditor/CourseEditorComponent-style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CourseEditor/CourseEditorComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseEditor/CourseEditorComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CourseEditor/ModuleListComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseEditor/ModuleListComponent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/CourseManagerContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/CourseManagerContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/CourseTableContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseTableComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/CourseService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/CourseService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/ModuleService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/ModuleService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +53,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1580762123130</updated>
-      <workItem from="1581270733332" duration="15405000" />
+      <workItem from="1581270733332" duration="35173000" />
+      <workItem from="1581439694177" duration="19843000" />
     </task>
     <servers />
   </component>
@@ -74,16 +64,19 @@
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.js" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/containers/CourseManagerContainer.js</url>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="WindowStateProjectService">
+    <state x="354" y="152" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1581386927449">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="354" y="152" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1581386927449" />
+    <state x="298" y="151" key="run.anything.popup" timestamp="1581457775875">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="298" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1581457775875" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1581462179272">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1581462179272" />
   </component>
   <component name="masterDetails">
     <states>

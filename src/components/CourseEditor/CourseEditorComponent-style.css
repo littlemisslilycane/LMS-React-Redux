@@ -2,10 +2,13 @@
 .wbdv-module-item.wbdv-active {
   background-color: #2a90ea; }
 
+
+.wbdv-module-item.active :hover{
+	background-color: #2a90ea; }
+
 .wbdv-module-item {
   font-weight: bold;
   margin:10px;
-
   background-color:#4c5154
 }
 
