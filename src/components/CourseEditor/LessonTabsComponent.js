@@ -29,12 +29,13 @@ class LessonTabsComponent extends React.Component {
     render() {
         return (
             <div className="col-sm-8 mt-3">
-                <ul className="nav nav-tabs  border-0">
+                <ul className="nav nav-tabs">
                     {this.props.lessons && this.props.lessons.map(lesson =>
                             <LessonTabItemComponent key={lesson._id}
                                                     lessonTitle = {lesson.title}
                                                     lessonId = {lesson._id}
                                                     lesson = {lesson}
+                                                    active={lesson._id === this.state.activeLessonId}
                                                     editing={this.state.editingLessonId === lesson._id}
                                                     currentLessonTitle = {this.state.currentLessonTitle}
                                                     onChangeEdit={e =>
@@ -56,9 +57,12 @@ class LessonTabsComponent extends React.Component {
                                                         })
 
                                                     }}
-
-
-
+                                                        select={() => {
+                                                        this.props.history.push(`/course-editor/${this.props.courseId}/module/${this.props.moduleId}/lesson/${lesson._id}`)
+                                                        this.setState({
+                                                            activeLessonId: lesson._id
+                                                    })
+                                                    }}
                             />
 
                     )}

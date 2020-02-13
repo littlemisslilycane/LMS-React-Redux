@@ -9,12 +9,15 @@ class ModuleListComponent extends React.Component {
     componentDidMount() {
         this.props.findModuleForCourse(this.props.courseId)
     }
-
+    componentDidUpdate() {
+        this.props.findModuleForCourse(this.props.courseId)
+    }
     state = {
         editingModuleId: '',
         currentModuleTitle: '',
         activeModuleId: this.props.moduleId,
     }
+
 
     render() {
         return (
@@ -24,12 +27,14 @@ class ModuleListComponent extends React.Component {
                         <ModuleListItemComponent
                             key={module._id}
                             module={module}
-                            editing={this.state.editingModuleId === module._id}
+                            editing={this.state.editingModuleId === module._id &&   this.state.editingModuleId === this.state.activeModuleId}
                             currentModuleTitle={this.state.currentModuleTitle}
                             edit={() => {
+                                this.setState({
+                                    activeModuleId: module._id
+                                })
                                 this.props.history.push(`/course-editor/${this.props.courseId}/module/${module._id}`)
                                 const moduleId = module._id
-
                                 this.setState({
                                     editingModuleId: module._id,
                                     currentModuleTitle: module.title
@@ -50,10 +55,10 @@ class ModuleListComponent extends React.Component {
                             }}
                             active={module._id === this.state.activeModuleId}
                             select={() => {
-                                const moduleId = module._id
-                                this.props.history.push(`/course-editor/${this.props.courseId}/module/${moduleId}`)
+                                this.props.history.push(`/course-editor/${this.props.courseId}/module/${ module._id}`)
                                 this.setState({
-                                    activeModuleId: module._id
+                                    activeModuleId: module._id,
+
                                 })
                             }}
 

@@ -21,7 +21,7 @@ class CourseCardComponent extends React.Component {
       <img src={logo} className="card-img-top " alt="..." />
         <div className="card-body text-truncate">
           <h5 className="card-title">{!this.state.editing && (
-              <Link  className="wbdv-coursetitle"
+              <Link  className="wbdv-coursetitle" onClick={() =>this.props.selectedCourseTitle(this.state.course.title)}
                     to={`/course-editor/${this.state.course._id}`}>
                   {this.state.course.title}
               </Link>

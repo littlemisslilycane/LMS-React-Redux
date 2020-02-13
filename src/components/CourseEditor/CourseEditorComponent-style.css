@@ -27,6 +27,15 @@
 
 }
 
+ .wbdv-page-tab.active{
+    background-color:white;
+    color:black;
+}
+
+.wbdv-page-tab.active a{
+
+    color:black;
+}
 .wbdv-add-widget {
 
     width: 40px;
@@ -42,7 +51,7 @@
     color: white;
 }
 
-.nav-tabs a {
+.nav-tabs a{
     color: white;
 }
 

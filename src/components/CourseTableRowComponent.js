@@ -47,7 +47,7 @@ class CourseTableRowComponent extends React.Component {
                     <i className="fa fa-file pr-2"></i>
                     {!this.state.editing && (
 
-                            <Link style={{color: this.state.fontcolor}} className="wbdv-coursetitle"
+                            <Link onClick={() =>this.props.selectedCourseTitle(this.state.course.title)} style={{color: this.state.fontcolor}} className="wbdv-coursetitle"
                                   to={`/course-editor/${this.state.course._id}`}>
                                 {this.state.course.title}
                             </Link>

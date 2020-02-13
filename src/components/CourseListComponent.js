@@ -11,7 +11,7 @@ const CourseListComponent = ({updateForm,
                              deleteCourse,
                              courses,
                              toggle,
-                             layout}) =>
+                             layout,selectedCourseTitle}) =>
     <div className="wbdv-coursemanager">
 
         <CourseManagerHeadingComponent
@@ -29,6 +29,7 @@ const CourseListComponent = ({updateForm,
                         deleteCourse={deleteCourse}
                         courses={courses}
                         toggle={toggle}
+                               selectedCourseTitle = {selectedCourseTitle}
                     /> }
                 />
 
@@ -42,6 +43,7 @@ const CourseListComponent = ({updateForm,
                                    deleteCourse={deleteCourse}
                                    courses={courses}
                                    toggle={toggle}
+                                   selectedCourseTitle = {selectedCourseTitle}
 
                                />
                            }/>

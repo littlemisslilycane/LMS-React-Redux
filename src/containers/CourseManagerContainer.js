@@ -17,7 +17,8 @@ class CourseManagerComponent extends React.Component {
         layout: "table",
         editingCourse: false,
         newCourseTitle: "",
-        courses: []
+        courses: [],
+        CourseHeader: ""
     };
 
     componentDidMount = async () => {
@@ -61,7 +62,7 @@ class CourseManagerComponent extends React.Component {
 
     addCourse = async () => {
         if (this.state.newCourseTitle.trim() == "") {
-            alert("Please enter the course title");
+
             return false;
         }
         const newCourse = {
@@ -90,6 +91,13 @@ class CourseManagerComponent extends React.Component {
         });
     };
 
+    selectedCourseTitle = (e) => {
+        this.setState({
+            CourseHeader: e
+        });
+
+    };
+
     render() {
         return (
             <div>
@@ -97,7 +105,11 @@ class CourseManagerComponent extends React.Component {
                     <Route path="/course-editor/:courseId"
                            exact={true}
                            render={(props) =>
-                               <CourseEditorComponent courseId={props.match.params.courseId}
+                               <CourseEditorComponent layout= {this.state.layout}
+                                                      lessonId={props.match.params.lessonId}
+                                                      moduleId={props.match.params.moduleId}
+                                                      courseId={props.match.params.courseId}
+                                                      courseheader={ this.state.CourseHeader}
                                                       {...props}/>}
                     />
 
@@ -107,8 +119,11 @@ class CourseManagerComponent extends React.Component {
                         render={(props) =>
                             <CourseEditorComponent
                                 {...props}
+                                layout= {this.state.layout}
                                 moduleId={props.match.params.moduleId}
                                 courseId={props.match.params.courseId}
+                                lessonId={props.match.params.lessonId}
+                                courseheader={ this.state.CourseHeader}
                             />}/>
                     <Route
                         path="/course-editor/:courseId/module/:moduleId/lesson/:lessonId"
@@ -116,10 +131,26 @@ class CourseManagerComponent extends React.Component {
                         render={(props) =>
                             <CourseEditorComponent
                                 {...props}
+                                layout= {this.state.layout}
                                 lessonId={props.match.params.lessonId}
                                 moduleId={props.match.params.moduleId}
                                 courseId={props.match.params.courseId}
+                                courseheader={ this.state.CourseHeader}
                                 />
+                        }/>
+                    <Route
+                        path="/course-editor/:courseId/module/:moduleId/lesson/:lessonId/topic/:topicId"
+                        exact={true}
+                        render={(props) =>
+                            <CourseEditorComponent
+                                {...props}
+                                layout= {this.state.layout}
+                                lessonId={props.match.params.lessonId}
+                                moduleId={props.match.params.moduleId}
+                                courseId={props.match.params.courseId}
+                                topicId={props.match.params.topicId}
+                                courseheader={ this.state.CourseHeader}
+                            />
                         }/>
 
 
@@ -133,6 +164,7 @@ class CourseManagerComponent extends React.Component {
                                courses={this.state.courses}
                                toggle={this.toggle}
                                layout={this.state.layout}
+                               selectedCourseTitle = {this.selectedCourseTitle}
                            />}/>
 
                 </Router>
