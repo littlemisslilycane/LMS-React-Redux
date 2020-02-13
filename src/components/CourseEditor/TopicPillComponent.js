@@ -5,7 +5,7 @@ import {
     findTopicsForLesson as findTopicsService,
     updateTopics as updateTopicsService
 } from '../../services/TopicService'
-import {createTopic, findTopic, updateTopic} from "../../actions/topicActions"
+import {createTopic, findTopic, findTopicForLesson, updateTopic} from "../../actions/topicActions"
 import TopicPillItemComponent from "./TopicPillItemComponent";
 
 
@@ -46,12 +46,15 @@ class TopicPillComponent extends React.Component {
                                             }
                                             edit={() => {
                                                 this.setState({
+                                                    activeTopicId: topic._id
+                                                })
+                                                this.setState({
                                                     editingTopicId: topic._id,
                                                     currentTopicTitle: topic.title
                                                 })
                                             }}
                                             save={() => {
-                                                this.props.saveTopic(this.state.currentTopicTitle, this.state.editingLessonId)
+                                                this.props.saveTopic(this.state.currentTopicTitle, this.state.editingTopicId)
                                                 this.setState({
                                                     currentTopicTitle: '',
                                                     editingTopicId: ''
@@ -99,7 +102,7 @@ const dispatchToPropertyMapper = (dispatch) => {
 
             findTopicsService(lessonId)
                 .then(actualTopic =>
-                    dispatch(findTopic(actualTopic)))
+                    dispatch(findTopicForLesson(actualTopic)))
 
         },
         saveTopic: (newTopicTitle, editingTopicId) => {

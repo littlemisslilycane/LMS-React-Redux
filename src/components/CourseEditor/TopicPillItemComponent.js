@@ -5,12 +5,13 @@ import {deleteTopic as deleteTopicAction} from "../../actions/topicActions";
 
 const TopicPillItemComponent = ({deleteTopic,topic,onChangeEdit,edit,editing,currentTopicTitle,save,active,select}) =>
 
-       <li className="nav-item wbdv-topic-pill">
-           {!editing && <a href="#" className="nav-link">{topic.title}</a>}
+       <li key={topic._id} className={`nav-item wbdv-topic-pill  ${active ? 'active':''}` } onClick={select}>
+           <a href="#" className={`nav-link `}>{!editing &&<span> {topic.title}</span>}
            {editing && <input type="text" value ={currentTopicTitle} onChange={onChangeEdit}/>  }
-           <a href="#" onClick={edit} className="btn fa fa-pencil col-3"></a>
+           {!editing && <span><a href="#" onClick={edit} className="btn fa fa-pencil col-3"></a></span>}
            {editing && <a href="#" onClick={save}  className="btn fa fa-save"></a> }
-           <a href="#" onClick={()=>deleteTopic(topic._id)} className="btn fa fa-trash col-3"></a>
+           {editing && <span><a href="#" onClick={()=>deleteTopic(topic._id)} className="btn fa fa-trash col-3"></a></span>}
+               </a>
        </li>
 
 

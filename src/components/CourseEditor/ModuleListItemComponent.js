@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import {connect} from 'react-redux'
-
+import {deleteModule} from "../../actions/moduleActions";
+import {deleteModule as deleteModuleService} from "../../services/ModuleService";
 const ModuleListItemComponent = ({module,deleteModule,editing,edit,currentModuleTitle,onChangeEdit,save,active, select}) =>
 
 
@@ -22,13 +23,8 @@ const stateToPropertyMapper = (state) => {{}}
 const dispatchToPropertyMapper = (dispatch) => {
     return {
         deleteModule: (moduleId,editingmodule) => {
-         fetch(`https://wbdv-generic-server.herokuapp.com/api/001387987/modules/${moduleId}`,{
-                         method:'DELETE'
-                     }).then(response=>response.json())
-                         .then(actualModules => dispatch({
-                             type: 'DELETE_MODULE',
-                             moduleId: moduleId
-                         }))
+         deleteModuleService(moduleId)
+                         .then(actualModules => dispatch(deleteModule(moduleId)))
         }
         }
         }

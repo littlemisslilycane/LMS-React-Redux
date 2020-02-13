@@ -28,6 +28,16 @@ export const findLessonsForModule = (moduleId) => {
 
 }
 
+export const findLesson = (lessonId) => {
+    const response = fetch(`${API_LINK}/lessons/${lessonId}`, {
+        method: 'GET'
+    }).then(response => {
+        return response.json()
+    })
+    return response;
+
+}
+
 export const deleteLesson = (lessonId) => {
 
     const response = fetch(`${API_LINK}/lessons/${lessonId}`, {
@@ -49,6 +59,3 @@ export const updateLesson = (lessonId,lesson) =>{
     return response;
 }
 
-export default {
-    createLesson, findLessonsForModule, deleteLesson
-}

@@ -25,7 +25,15 @@ export const findTopicsForLesson = (lessonId) => {
     return response;
 
 }
+export const findTopic = (topicId) => {
+    const response = fetch(`${API_LINK}/topics/${topicId}`, {
+        method: 'GET'
+    }).then(response => {
+        return response.json()
+    })
+    return response;
 
+}
 export const deleteTopic = (topicId) => {
 
     const response = fetch(`${API_LINK}/topics/${topicId}`, {
@@ -37,7 +45,7 @@ export const deleteTopic = (topicId) => {
 }
 
 export const updateTopics = (topicId,topic) =>{
-    const response = fetch(`https://wbdv-generic-server.herokuapp.com/api/001387987/topics/${topicId}`, {
+    const response = fetch(`${API_LINK}/topics/${topicId}`, {
         method: 'PUT',
         headers: {
             'content-type': 'application/json'
@@ -45,8 +53,4 @@ export const updateTopics = (topicId,topic) =>{
         body: JSON.stringify({title: topic})
     }).then(response => {return response.json()})
     return response;
-}
-
-export default {
-    createTopic, findTopicsForLesson, deleteTopic,updateTopics
 }

@@ -51,6 +51,16 @@
     color: white;
 }
 
+.wbdv-topic-pill.active{
+    background-color: #2a90ea;
+
+}
+.wbdv-topic-pill.active a{
+
+    color:white;
+}
+
+
 .nav-tabs a{
     color: white;
 }

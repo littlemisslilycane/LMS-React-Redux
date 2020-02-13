@@ -1,4 +1,4 @@
-import {CREATE_MODULE, UPDATE_MODULE} from "../actions/moduleActions";
+import {CREATE_MODULE, DELETE_MODULE, FIND_MODULES_FOR_COURSE, UPDATE_MODULE} from "../actions/moduleActions";
 
 const initialState = {
     modules: []
@@ -6,7 +6,7 @@ const initialState = {
 
 const moduleReducer = (state = initialState, action) => {
     switch (action.type) {
-        case 'FIND_MODULES_FOR_COURSE':
+        case FIND_MODULES_FOR_COURSE:
             return {
                 modules: action.modules
             }
@@ -20,7 +20,7 @@ const moduleReducer = (state = initialState, action) => {
             return {
                 modules: action.modules
             }
-        case 'DELETE_MODULE':
+        case DELETE_MODULE:
             return {
                 modules:
                     state.modules.filter(module => module._id != action.moduleId)

@@ -1,4 +1,4 @@
-export const FIND_LESSONS = "FIND_LESSONS"
+export const FIND_LESSONS_FOR_MODULE = "FIND_LESSONS_FOR_MODULE"
 export const UPDATE_LESSONS = "UPDATE_LESSONS"
 export const CREATE_LESSON = "CREATE_LESSON"
 export const DELETE_LESSON = "DELETE_LESSON"
@@ -10,7 +10,7 @@ export const createLesson = (lesson) => ({
 
 export const findLessons = (lesson) => ({
 
-    type: FIND_LESSONS,
+    type: FIND_LESSONS_FOR_MODULE,
     lesson: lesson
 })
 

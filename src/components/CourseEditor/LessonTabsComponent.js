@@ -15,7 +15,7 @@ class LessonTabsComponent extends React.Component {
     }
 
     componentDidUpdate(prevProps){
-        if(this.props.moduleId !== prevProps.moduleId  ) {
+        if((this.props.moduleId !== prevProps.moduleId)) {
             this.props.findLessonsForModule(this.props.moduleId)
         }
 
@@ -44,6 +44,9 @@ class LessonTabsComponent extends React.Component {
                                                         })
                                                     }
                                                     edit={() => {
+                                                        this.setState({
+                                                            activeLessonId: lesson._id
+                                                        })
                                                         this.setState({
                                                             editingLessonId: lesson._id,
                                                             currentLessonTitle: lesson.title

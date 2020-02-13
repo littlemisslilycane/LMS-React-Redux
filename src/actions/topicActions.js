@@ -8,7 +8,7 @@ export const createTopic = (topic) => ({
     topic: topic
 })
 
-export const findTopic = (topic) => ({
+export const findTopicForLesson = (topic) => ({
 
     type: FIND_TOPIC,
     topic: topic

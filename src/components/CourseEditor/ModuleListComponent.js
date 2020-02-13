@@ -1,8 +1,10 @@
 import React from "react";
 import {connect} from "react-redux";
 import ModuleListItemComponent from "./ModuleListItemComponent";
-import {createModule, updateModule} from "../../actions/moduleActions";
-import {saveModule} from "../../services/ModuleService";
+import {createModule, findModulesForCourse, updateModule} from "../../actions/moduleActions";
+import {createModule as createModuleService,
+findModulesForCourse as findModuleService,
+updateModule as updateModuleService} from "../../services/ModuleService";
 
 class ModuleListComponent extends React.Component {
 
@@ -86,13 +88,7 @@ const stateToPropertyMapper = (state) => {
 const dispatchToPropertyMapper = (dispatch) => {
     return {
         createModule: (courseId) => {
-            fetch(`https://wbdv-generic-server.herokuapp.com/api/001387987/courses/${courseId}/modules`, {
-                method: "POST",
-                body: JSON.stringify({title: "New Module"}),
-                headers: {
-                    'content-type': 'application/json'
-                }
-            }).then(response => response.json())
+            createModuleService(courseId)
                 .then(actualModule =>
                     dispatch(
                         createModule(actualModule)
@@ -100,26 +96,15 @@ const dispatchToPropertyMapper = (dispatch) => {
         },
         findModuleForCourse: (courseId) => {
 
-            fetch(`https://wbdv-generic-server.herokuapp.com/api/001387987/courses/${courseId}/modules`, {
-                method: 'GET'
-            }).then(response => response.json())
-                .then(actualModules => dispatch({
-                    type: 'FIND_MODULES_FOR_COURSE',
-                    modules: actualModules
-                }))
+            findModuleService(courseId)
+                .then(actualModules => dispatch(
+                    findModulesForCourse(actualModules)
+                ))
         },
-        saveModule: (newCourseTitle, editingModuleId) => {
-            let module = {
-                title: newCourseTitle
-            }
-            fetch(`https://wbdv-generic-server.herokuapp.com/api/001387987/modules/${editingModuleId}`, {
-                method: 'PUT',
-                headers: {
-                    'content-type': 'application/json'
-                },
-                body: JSON.stringify(module)
-            }).then(response => response.json()).then(
-                dispatch(updateModule(module, editingModuleId))
+        saveModule: (newModuleTitle, editingModuleId) => {
+
+            updateModuleService(editingModuleId,newModuleTitle).then(
+                dispatch(updateModule({title:newModuleTitle}, editingModuleId))
             )
         }
     }

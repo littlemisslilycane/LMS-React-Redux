@@ -17,6 +17,7 @@ const topicReducer = (state = initState, action) => {
             return {
                 topics: action.topic
             }
+
         case UPDATE_TOPIC:
             return {
                 topics: state.topics.map(topic => topic._id === action.topicId ? action.updatedTopic: topic)
@@ -27,7 +28,7 @@ const topicReducer = (state = initState, action) => {
                     state.topics.filter(topic => topic._id != action.topic)
             }
         default:
-            debugger;
+
             return state;
     }
 

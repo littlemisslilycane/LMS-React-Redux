@@ -1,4 +1,4 @@
-import {CREATE_LESSON, FIND_LESSONS, DELETE_LESSON, UPDATE_LESSONS} from "../actions/lessonActions";
+import {CREATE_LESSON, FIND_LESSONS_FOR_MODULE, DELETE_LESSON, UPDATE_LESSONS} from "../actions/lessonActions";
 
 const initState = {
     lessons: []
@@ -13,7 +13,7 @@ const lessonReducer = (state = initState, action) => {
                     action.lesson
                 ]
             }
-        case FIND_LESSONS:
+        case FIND_LESSONS_FOR_MODULE:
             return {
                 lessons: action.lesson
             }
